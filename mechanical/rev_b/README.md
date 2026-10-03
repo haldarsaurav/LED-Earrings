@@ -1,0 +1,7 @@
+# Rev B 3D-printable fit study
+
+`earring_tray.scad` is a parametric rear tray for the provisional 24 × 38 mm PCB. It leaves the LED face exposed, provides a rear cell cavity, three access wells for charge/programming pads and a hole aligned with the PCB hook hole. It is a **fit study**, because no exact battery or component heights have been confirmed. The printed part is not electrical insulation by itself; use an additional thin insulating film between the cell and circuit.
+
+Open the SCAD file in OpenSCAD, choose `part = "tray"` and export STL. Print one in a flexible material such as TPU and adjust `clearance`, `cavity_depth` and pad positions after measuring the real PCB, cell and pogo fixture. Test fit without a cell first. The switch and button access windows must be added once their final footprints and side locations are fixed; do not trap a powered cell in a sealed case.
+
+`gift_dock.scad` is a matching two-pocket desk-dock fit study. It leaves holes for two spring contacts per earring and a cavity for wiring. It is **not** a complete charger: add a separate dock PCB with USB-C 5 V input, the correct USB-C CC resistors, and two pogo pairs feeding the two BQ25185 IN/GND inputs. Keep UPDI off the daily-use dock. A keyed pocket, purchased spring-pin dimensions and verified polarity are required before charging; the model does not yet prevent a rotated earring from being inserted.
