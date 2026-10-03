@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 880" role="img" aria-label="Rev B earring functional schematic draft">
+  <defs>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#e8f2f2} .h{font-size:30px;font-weight:bold} .sub{font-size:17px;fill:#a8c4c6} .t{font-size:21px;font-weight:bold} .b{font-size:16px} .s{font-size:14px;fill:#b8d0d1} .net{font-size:16px;fill:#7de0e3;font-weight:bold} .warn{fill:#f4bc78}
+      .box{fill:#153139;stroke:#5eafae;stroke-width:2;rx:16} .power{stroke:#7de0e3;stroke-width:4;fill:none} .signal{stroke:#c9a7ef;stroke-width:3;fill:none} .ground{stroke:#c0cbd4;stroke-width:3;fill:none}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#7de0e3"/></marker>
+  </defs>
+  <rect width="1440" height="880" fill="#0e1b22"/>
+  <text class="h" x="48" y="56">Tidal Light | earring electrical draft</text>
+  <text class="sub" x="48" y="84">One earring shown; build two identical boards. USB-C charging dock is separate.</text>
+
+  <rect class="box" x="50" y="150" width="230" height="150"/>
+  <text class="t" x="72" y="187">USB-C gift dock</text>
+  <text class="b" x="72" y="219">5 V sink; CC1/CC2 Rd</text>
+  <text class="b" x="72" y="247">2 x 5.1k to GND</text>
+  <text class="s" x="72" y="274">P1 5V / P2 GND pogo</text>
+
+  <rect class="box" x="378" y="134" width="260" height="232"/>
+  <text class="t" x="399" y="172">U3 BQ25185</text>
+  <text class="b" x="399" y="202">IN 10  | SYS 1  | BAT 2</text>
+  <text class="b" x="399" y="229">/CE 4 to GND</text>
+  <text class="b" x="399" y="256">ISET 8: 10k to GND</text>
+  <text class="b" x="399" y="283">ILIM/VSET 7: 24k</text>
+  <text class="b" x="399" y="310">TS/MR 6: cell NTC</text>
+  <text class="s" x="399" y="340">C1 1u IN; C2 10u SYS; C3 1u BAT</text>
+
+  <rect class="box" x="378" y="480" width="260" height="170"/>
+  <text class="t" x="399" y="517">B1 protected 1S</text>
+  <text class="b" x="399" y="544">Akyga AKY0153, 150mAh</text>
+  <text class="b" x="399" y="572">20 x 25 x 4 mm pouch</text>
+  <text class="b" x="399" y="600">TH1 10k B3435 on pouch</text>
+  <text class="s" x="399" y="627">Connector polarity to verify</text>
+
+  <rect class="box" x="766" y="134" width="277" height="232"/>
+  <text class="t" x="787" y="172">U4 TPS63030</text>
+  <text class="b" x="787" y="202">VIN/VINA from SYS</text>
+  <text class="b" x="787" y="229">1.5uH across L1/L2</text>
+  <text class="b" x="787" y="256">EN: switch SYS / GND</text>
+  <text class="b" x="787" y="283">PS/SYNC: SYS</text>
+  <text class="b" x="787" y="310">FB: 1.18M / 200k</text>
+  <text class="s" x="787" y="340">10u + 100n IN; 2 x 10u OUT</text>
+
+  <rect class="box" x="1133" y="134" width="255" height="232"/>
+  <text class="t" x="1154" y="172">U1 ATtiny1616</text>
+  <text class="b" x="1154" y="202">VDD 4: 3V45</text>
+  <text class="b" x="1154" y="229">PA4 5: LED data</text>
+  <text class="b" x="1154" y="256">PA5 6: battery divider</text>
+  <text class="b" x="1154" y="283">PA6 7: effect button</text>
+  <text class="b" x="1154" y="310">PA0 19: UPDI pad P3</text>
+  <text class="s" x="1154" y="340">P4 senses 3V45; no 5V injection</text>
+
+  <rect class="box" x="766" y="480" width="277" height="170"/>
+  <text class="t" x="787" y="517">U2 LIS2DW12</text>
+  <text class="b" x="787" y="544">SCL 1 / SDA 4; 10k pull-ups</text>
+  <text class="b" x="787" y="572">CS 2 high; SA0 3 low</text>
+  <text class="b" x="787" y="600">VDD/VDDIO: 3V45</text>
+  <text class="s" x="787" y="627">3-axis gravity tilt; no gyro needed</text>
+
+  <rect class="box" x="1133" y="480" width="255" height="170"/>
+  <text class="t" x="1154" y="517">80 RGB LEDs</text>
+  <text class="b" x="1154" y="544">WS2812B-2020-V6</text>
+  <text class="b" x="1154" y="572">8 x 10, serpentine chain</text>
+  <text class="b" x="1154" y="600">3V45 / GND common rails</text>
+  <text class="s" x="1154" y="627">PA4 via 330R to LED01 DI</text>
+
+  <path class="power" d="M280 195 H378" marker-end="url(#arr)"/><text class="net" x="294" y="179">DOCK_5V</text>
+  <path class="power" d="M638 195 H766" marker-end="url(#arr)"/><text class="net" x="663" y="179">SYS</text>
+  <path class="power" d="M1043 195 H1133" marker-end="url(#arr)"/><text class="net" x="1053" y="179">3V45</text>
+  <path class="power" d="M508 366 V480" marker-end="url(#arr)"/><text class="net" x="519" y="430">BAT</text>
+  <path class="signal" d="M618 480 V400 H590 V366"/><text class="s" x="628" y="443">TS/MR</text>
+  <path class="signal" d="M1260 366 V480"/><text class="s" x="1271" y="429">330R DATA</text>
+  <path class="signal" d="M1133 294 H1090 V555 H1043"/><text class="s" x="1053" y="541">PB0 / PB1 I2C</text>
+  <path class="power" d="M904 366 V480"/><text class="net" x="915" y="429">3V45</text>
+  <path class="power" d="M1043 328 H1087 V600 H1133"/><text class="net" x="1048" y="380">3V45</text>
+
+  <rect x="48" y="712" width="1340" height="126" fill="#30281f" stroke="#b2884b" rx="12"/>
+  <text class="t warn" x="70" y="748">FIRST DRAFT - NOT A FABRICATION SCHEMATIC</text>
+  <text class="b" x="70" y="778">Full pin list and values: PIN_CONNECTIONS.md. Every LED DIN/DOUT net: led_chain.csv. Board space study: board_study.svg.</text>
+  <text class="b" x="70" y="807">Still required: exact footprints, charger compensation, component placement, routing, ERC/DRC, Gerbers and prototype measurements.</text>
+</svg>

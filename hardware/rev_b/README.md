@@ -67,6 +67,8 @@ The dock carries only 5 V and ground to each earring's charger. It must not conn
 
 ## PCB study and files
 
+For a quick first-draft view, open [schematic_draft.svg](schematic_draft.svg) for the one-earring power, control and LED connections, then [board_study.svg](board_study.svg) for the proposed front/back layout. These are review drawings, not the native orderable PCB.
+
 Run `python generate_study.py` to regenerate:
 
 - `placements.csv`: mechanical LED centres and provisional rear block centres, in mm from the upper-left board corner.
