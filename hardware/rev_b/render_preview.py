@@ -10,7 +10,7 @@ bold_path = Path("C:/Windows/Fonts/segoeuib.ttf")
 font = ImageFont.truetype(str(font_path), 18) if font_path.exists() else ImageFont.load_default()
 bold = ImageFont.truetype(str(bold_path), 24) if bold_path.exists() else font
 d.text((32, 20), "Motion-water LED earrings", font=bold, fill="#f3f6f5")
-d.text((32, 53), "8 × 10 pixel face  ·  provisional 24 × 38 mm board  ·  illustration only", font=font, fill="#a5b8bc")
+d.text((32, 53), "8 × 10 pixel face  ·  provisional 26 × 42 mm board  ·  illustration only", font=font, fill="#a5b8bc")
 
 
 def board(ox, title, slope=0, heart=False):

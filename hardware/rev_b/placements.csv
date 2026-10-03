@@ -1,90 +1,91 @@
 reference,side,center_x_mm,center_y_mm,note
-LED01,front,3.60,8.00,2.4 mm pitch; rotation TBD
-LED02,front,6.00,8.00,2.4 mm pitch; rotation TBD
-LED03,front,8.40,8.00,2.4 mm pitch; rotation TBD
-LED04,front,10.80,8.00,2.4 mm pitch; rotation TBD
-LED05,front,13.20,8.00,2.4 mm pitch; rotation TBD
-LED06,front,15.60,8.00,2.4 mm pitch; rotation TBD
-LED07,front,18.00,8.00,2.4 mm pitch; rotation TBD
-LED08,front,20.40,8.00,2.4 mm pitch; rotation TBD
-LED09,front,20.40,10.40,2.4 mm pitch; rotation TBD
-LED10,front,18.00,10.40,2.4 mm pitch; rotation TBD
-LED11,front,15.60,10.40,2.4 mm pitch; rotation TBD
-LED12,front,13.20,10.40,2.4 mm pitch; rotation TBD
-LED13,front,10.80,10.40,2.4 mm pitch; rotation TBD
-LED14,front,8.40,10.40,2.4 mm pitch; rotation TBD
-LED15,front,6.00,10.40,2.4 mm pitch; rotation TBD
-LED16,front,3.60,10.40,2.4 mm pitch; rotation TBD
-LED17,front,3.60,12.80,2.4 mm pitch; rotation TBD
-LED18,front,6.00,12.80,2.4 mm pitch; rotation TBD
-LED19,front,8.40,12.80,2.4 mm pitch; rotation TBD
-LED20,front,10.80,12.80,2.4 mm pitch; rotation TBD
-LED21,front,13.20,12.80,2.4 mm pitch; rotation TBD
-LED22,front,15.60,12.80,2.4 mm pitch; rotation TBD
-LED23,front,18.00,12.80,2.4 mm pitch; rotation TBD
-LED24,front,20.40,12.80,2.4 mm pitch; rotation TBD
-LED25,front,20.40,15.20,2.4 mm pitch; rotation TBD
-LED26,front,18.00,15.20,2.4 mm pitch; rotation TBD
-LED27,front,15.60,15.20,2.4 mm pitch; rotation TBD
-LED28,front,13.20,15.20,2.4 mm pitch; rotation TBD
-LED29,front,10.80,15.20,2.4 mm pitch; rotation TBD
-LED30,front,8.40,15.20,2.4 mm pitch; rotation TBD
-LED31,front,6.00,15.20,2.4 mm pitch; rotation TBD
-LED32,front,3.60,15.20,2.4 mm pitch; rotation TBD
-LED33,front,3.60,17.60,2.4 mm pitch; rotation TBD
-LED34,front,6.00,17.60,2.4 mm pitch; rotation TBD
-LED35,front,8.40,17.60,2.4 mm pitch; rotation TBD
-LED36,front,10.80,17.60,2.4 mm pitch; rotation TBD
-LED37,front,13.20,17.60,2.4 mm pitch; rotation TBD
-LED38,front,15.60,17.60,2.4 mm pitch; rotation TBD
-LED39,front,18.00,17.60,2.4 mm pitch; rotation TBD
-LED40,front,20.40,17.60,2.4 mm pitch; rotation TBD
-LED41,front,20.40,20.00,2.4 mm pitch; rotation TBD
-LED42,front,18.00,20.00,2.4 mm pitch; rotation TBD
-LED43,front,15.60,20.00,2.4 mm pitch; rotation TBD
-LED44,front,13.20,20.00,2.4 mm pitch; rotation TBD
-LED45,front,10.80,20.00,2.4 mm pitch; rotation TBD
-LED46,front,8.40,20.00,2.4 mm pitch; rotation TBD
-LED47,front,6.00,20.00,2.4 mm pitch; rotation TBD
-LED48,front,3.60,20.00,2.4 mm pitch; rotation TBD
-LED49,front,3.60,22.40,2.4 mm pitch; rotation TBD
-LED50,front,6.00,22.40,2.4 mm pitch; rotation TBD
-LED51,front,8.40,22.40,2.4 mm pitch; rotation TBD
-LED52,front,10.80,22.40,2.4 mm pitch; rotation TBD
-LED53,front,13.20,22.40,2.4 mm pitch; rotation TBD
-LED54,front,15.60,22.40,2.4 mm pitch; rotation TBD
-LED55,front,18.00,22.40,2.4 mm pitch; rotation TBD
-LED56,front,20.40,22.40,2.4 mm pitch; rotation TBD
-LED57,front,20.40,24.80,2.4 mm pitch; rotation TBD
-LED58,front,18.00,24.80,2.4 mm pitch; rotation TBD
-LED59,front,15.60,24.80,2.4 mm pitch; rotation TBD
-LED60,front,13.20,24.80,2.4 mm pitch; rotation TBD
-LED61,front,10.80,24.80,2.4 mm pitch; rotation TBD
-LED62,front,8.40,24.80,2.4 mm pitch; rotation TBD
-LED63,front,6.00,24.80,2.4 mm pitch; rotation TBD
-LED64,front,3.60,24.80,2.4 mm pitch; rotation TBD
-LED65,front,3.60,27.20,2.4 mm pitch; rotation TBD
-LED66,front,6.00,27.20,2.4 mm pitch; rotation TBD
-LED67,front,8.40,27.20,2.4 mm pitch; rotation TBD
-LED68,front,10.80,27.20,2.4 mm pitch; rotation TBD
-LED69,front,13.20,27.20,2.4 mm pitch; rotation TBD
-LED70,front,15.60,27.20,2.4 mm pitch; rotation TBD
-LED71,front,18.00,27.20,2.4 mm pitch; rotation TBD
-LED72,front,20.40,27.20,2.4 mm pitch; rotation TBD
-LED73,front,20.40,29.60,2.4 mm pitch; rotation TBD
-LED74,front,18.00,29.60,2.4 mm pitch; rotation TBD
-LED75,front,15.60,29.60,2.4 mm pitch; rotation TBD
-LED76,front,13.20,29.60,2.4 mm pitch; rotation TBD
-LED77,front,10.80,29.60,2.4 mm pitch; rotation TBD
-LED78,front,8.40,29.60,2.4 mm pitch; rotation TBD
-LED79,front,6.00,29.60,2.4 mm pitch; rotation TBD
-LED80,front,3.60,29.60,2.4 mm pitch; rotation TBD
-HOOK,mechanical,12,2.7,"1.5 mm mechanical hole, copper clearance TBD"
-U1_MCU,rear,6,33.2,ATtiny1616; provisional reservation
-U2_CHARGER,rear,11,33.2,BQ25185; provisional reservation
-U3_REG,rear,16,33.2,TPS63030 + inductor; provisional reservation
-U4_ACCEL,rear,20.5,33.2,LIS2DW12; axes TBD
-BAT,rear,12,19,rear cell envelope 18 x 24 mm; overlaps circuitry vertically
-P1_5V,rear,5,36,rear charging pad
-P2_GND,rear,12,36,rear charging pad
-P3_UPDI,rear,19,36,rear programming pad
+LED01,front,4.60,8.00,2.4 mm pitch; rotation TBD
+LED02,front,7.00,8.00,2.4 mm pitch; rotation TBD
+LED03,front,9.40,8.00,2.4 mm pitch; rotation TBD
+LED04,front,11.80,8.00,2.4 mm pitch; rotation TBD
+LED05,front,14.20,8.00,2.4 mm pitch; rotation TBD
+LED06,front,16.60,8.00,2.4 mm pitch; rotation TBD
+LED07,front,19.00,8.00,2.4 mm pitch; rotation TBD
+LED08,front,21.40,8.00,2.4 mm pitch; rotation TBD
+LED09,front,21.40,10.40,2.4 mm pitch; rotation TBD
+LED10,front,19.00,10.40,2.4 mm pitch; rotation TBD
+LED11,front,16.60,10.40,2.4 mm pitch; rotation TBD
+LED12,front,14.20,10.40,2.4 mm pitch; rotation TBD
+LED13,front,11.80,10.40,2.4 mm pitch; rotation TBD
+LED14,front,9.40,10.40,2.4 mm pitch; rotation TBD
+LED15,front,7.00,10.40,2.4 mm pitch; rotation TBD
+LED16,front,4.60,10.40,2.4 mm pitch; rotation TBD
+LED17,front,4.60,12.80,2.4 mm pitch; rotation TBD
+LED18,front,7.00,12.80,2.4 mm pitch; rotation TBD
+LED19,front,9.40,12.80,2.4 mm pitch; rotation TBD
+LED20,front,11.80,12.80,2.4 mm pitch; rotation TBD
+LED21,front,14.20,12.80,2.4 mm pitch; rotation TBD
+LED22,front,16.60,12.80,2.4 mm pitch; rotation TBD
+LED23,front,19.00,12.80,2.4 mm pitch; rotation TBD
+LED24,front,21.40,12.80,2.4 mm pitch; rotation TBD
+LED25,front,21.40,15.20,2.4 mm pitch; rotation TBD
+LED26,front,19.00,15.20,2.4 mm pitch; rotation TBD
+LED27,front,16.60,15.20,2.4 mm pitch; rotation TBD
+LED28,front,14.20,15.20,2.4 mm pitch; rotation TBD
+LED29,front,11.80,15.20,2.4 mm pitch; rotation TBD
+LED30,front,9.40,15.20,2.4 mm pitch; rotation TBD
+LED31,front,7.00,15.20,2.4 mm pitch; rotation TBD
+LED32,front,4.60,15.20,2.4 mm pitch; rotation TBD
+LED33,front,4.60,17.60,2.4 mm pitch; rotation TBD
+LED34,front,7.00,17.60,2.4 mm pitch; rotation TBD
+LED35,front,9.40,17.60,2.4 mm pitch; rotation TBD
+LED36,front,11.80,17.60,2.4 mm pitch; rotation TBD
+LED37,front,14.20,17.60,2.4 mm pitch; rotation TBD
+LED38,front,16.60,17.60,2.4 mm pitch; rotation TBD
+LED39,front,19.00,17.60,2.4 mm pitch; rotation TBD
+LED40,front,21.40,17.60,2.4 mm pitch; rotation TBD
+LED41,front,21.40,20.00,2.4 mm pitch; rotation TBD
+LED42,front,19.00,20.00,2.4 mm pitch; rotation TBD
+LED43,front,16.60,20.00,2.4 mm pitch; rotation TBD
+LED44,front,14.20,20.00,2.4 mm pitch; rotation TBD
+LED45,front,11.80,20.00,2.4 mm pitch; rotation TBD
+LED46,front,9.40,20.00,2.4 mm pitch; rotation TBD
+LED47,front,7.00,20.00,2.4 mm pitch; rotation TBD
+LED48,front,4.60,20.00,2.4 mm pitch; rotation TBD
+LED49,front,4.60,22.40,2.4 mm pitch; rotation TBD
+LED50,front,7.00,22.40,2.4 mm pitch; rotation TBD
+LED51,front,9.40,22.40,2.4 mm pitch; rotation TBD
+LED52,front,11.80,22.40,2.4 mm pitch; rotation TBD
+LED53,front,14.20,22.40,2.4 mm pitch; rotation TBD
+LED54,front,16.60,22.40,2.4 mm pitch; rotation TBD
+LED55,front,19.00,22.40,2.4 mm pitch; rotation TBD
+LED56,front,21.40,22.40,2.4 mm pitch; rotation TBD
+LED57,front,21.40,24.80,2.4 mm pitch; rotation TBD
+LED58,front,19.00,24.80,2.4 mm pitch; rotation TBD
+LED59,front,16.60,24.80,2.4 mm pitch; rotation TBD
+LED60,front,14.20,24.80,2.4 mm pitch; rotation TBD
+LED61,front,11.80,24.80,2.4 mm pitch; rotation TBD
+LED62,front,9.40,24.80,2.4 mm pitch; rotation TBD
+LED63,front,7.00,24.80,2.4 mm pitch; rotation TBD
+LED64,front,4.60,24.80,2.4 mm pitch; rotation TBD
+LED65,front,4.60,27.20,2.4 mm pitch; rotation TBD
+LED66,front,7.00,27.20,2.4 mm pitch; rotation TBD
+LED67,front,9.40,27.20,2.4 mm pitch; rotation TBD
+LED68,front,11.80,27.20,2.4 mm pitch; rotation TBD
+LED69,front,14.20,27.20,2.4 mm pitch; rotation TBD
+LED70,front,16.60,27.20,2.4 mm pitch; rotation TBD
+LED71,front,19.00,27.20,2.4 mm pitch; rotation TBD
+LED72,front,21.40,27.20,2.4 mm pitch; rotation TBD
+LED73,front,21.40,29.60,2.4 mm pitch; rotation TBD
+LED74,front,19.00,29.60,2.4 mm pitch; rotation TBD
+LED75,front,16.60,29.60,2.4 mm pitch; rotation TBD
+LED76,front,14.20,29.60,2.4 mm pitch; rotation TBD
+LED77,front,11.80,29.60,2.4 mm pitch; rotation TBD
+LED78,front,9.40,29.60,2.4 mm pitch; rotation TBD
+LED79,front,7.00,29.60,2.4 mm pitch; rotation TBD
+LED80,front,4.60,29.60,2.4 mm pitch; rotation TBD
+HOOK,mechanical,13,2.7,"1.5 mm mechanical hole, copper clearance TBD"
+U1_MCU,rear,5.5,35.2,ATtiny1616; provisional reservation
+U2_CHARGER,rear,11,35.2,BQ25185; provisional reservation
+U3_REG,rear,17,35.2,TPS63030 + inductor; provisional reservation
+U4_ACCEL,rear,22,35.2,LIS2DW12; axes TBD
+BAT,rear,13,19,rear 20 x 25 x 4 mm protected cell + NTC; wire space TBD
+P1_5V,rear,4,39.5,rear charging pad; keyed dock
+P2_GND,rear,10,39.5,rear charging/programming pad
+P3_UPDI,rear,16,39.5,rear programming pad; no dock contact
+P4_3V45,rear,22,39.5,rear programmer target-voltage sense; no dock contact

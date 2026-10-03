@@ -1,19 +1,19 @@
-// Rear tray study for one 24 x 38 mm PCB. Units: mm.
+// Rear tray study for one 26 x 42 mm PCB. Units: mm.
 // Export an STL from OpenSCAD after adjusting measured hardware dimensions.
 $fn = 48;
-board_w = 24;
-board_h = 38;
+board_w = 26;
+board_h = 42;
 board_t = 0.8;
 wall = 1.0;
 base = 1.2;
-cavity_depth = 6.4;
+cavity_depth = 6.8;
 clearance = 0.25;
 corner_r = 2.0;
-hook_x = 12;
+hook_x = 13;
 hook_y = 2.7;
 hook_d = 1.5;
-pad_y = 36;
-pad_x = [5, 12, 19];
+pad_y = 39.5;
+pad_x = [4, 10, 16, 22]; // dock contacts first two; final two for UPDI + VTG
 
 module rounded_plate(w, h, r, height) {
     linear_extrude(height=height)
@@ -38,7 +38,7 @@ module tray() {
         translate([9,-wall-0.1,1.5]) cube([6,wall+clearance+0.2,2]);
     }
     // Four flexible retention nibs; tune after the first print.
-    for (x=[-0.15,board_w-0.55], y=[8,29])
+    for (x=[-0.15,board_w-0.55], y=[8,31])
         translate([x,y,base+cavity_depth]) cube([0.7,1.5,0.35]);
 }
 

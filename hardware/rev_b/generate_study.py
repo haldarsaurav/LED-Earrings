@@ -5,9 +5,9 @@ import csv
 from pathlib import Path
 
 HERE = Path(__file__).parent
-BOARD_W, BOARD_H = 24.0, 38.0
+BOARD_W, BOARD_H = 26.0, 42.0
 COLS, ROWS, PITCH = 8, 10, 2.4
-X0, Y0 = 3.6, 8.0
+X0, Y0 = 4.6, 8.0
 
 
 def led_order():
@@ -35,21 +35,22 @@ with (HERE / "placements.csv").open("w", newline="", encoding="utf-8") as fh:
     for index, x, y, px, py in leds:
         out.writerow([f"LED{index:02d}", "front", f"{px:.2f}", f"{py:.2f}", "2.4 mm pitch; rotation TBD"])
     for ref, x, y, note in [
-        ("HOOK", 12, 2.7, "1.5 mm mechanical hole, copper clearance TBD"),
-        ("U1_MCU", 6, 33.2, "ATtiny1616; provisional reservation"),
-        ("U2_CHARGER", 11, 33.2, "BQ25185; provisional reservation"),
-        ("U3_REG", 16, 33.2, "TPS63030 + inductor; provisional reservation"),
-        ("U4_ACCEL", 20.5, 33.2, "LIS2DW12; axes TBD"),
-        ("BAT", 12, 19, "rear cell envelope 18 x 24 mm; overlaps circuitry vertically"),
-        ("P1_5V", 5, 36, "rear charging pad"),
-        ("P2_GND", 12, 36, "rear charging pad"),
-        ("P3_UPDI", 19, 36, "rear programming pad"),
+        ("HOOK", 13, 2.7, "1.5 mm mechanical hole, copper clearance TBD"),
+        ("U1_MCU", 5.5, 35.2, "ATtiny1616; provisional reservation"),
+        ("U2_CHARGER", 11, 35.2, "BQ25185; provisional reservation"),
+        ("U3_REG", 17, 35.2, "TPS63030 + inductor; provisional reservation"),
+        ("U4_ACCEL", 22, 35.2, "LIS2DW12; axes TBD"),
+        ("BAT", 13, 19, "rear 20 x 25 x 4 mm protected cell + NTC; wire space TBD"),
+        ("P1_5V", 4, 39.5, "rear charging pad; keyed dock"),
+        ("P2_GND", 10, 39.5, "rear charging/programming pad"),
+        ("P3_UPDI", 16, 39.5, "rear programming pad; no dock contact"),
+        ("P4_3V45", 22, 39.5, "rear programmer target-voltage sense; no dock contact"),
     ]:
         out.writerow([ref, "mechanical" if ref == "HOOK" else "rear", x, y, note])
 
 scale = 12
 parts = [
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540">',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 590">',
     '<style>text{font-family:Arial,sans-serif;fill:#e7edf7} .small{font-size:11px;fill:#a9bacb} .label{font-size:14px;font-weight:bold}</style>',
     '<rect width="700" height="540" fill="#101820"/>',
     '<text class="label" x="62" y="28">FRONT · LED face</text><text class="label" x="390" y="28">BACK · space study</text>',
@@ -60,24 +61,24 @@ def rect(x, y, w, h, fill, stroke="#8fb7b5", rx=0):
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}"/>')
 
 
-for ox in (50, 378):
+for ox in (50, 390):
     rect(ox, 46, BOARD_W * scale, BOARD_H * scale, "#142b2b", "#93c7bf", 24)
-    parts.append(f'<circle cx="{ox+12*scale}" cy="{46+2.7*scale}" r="9" fill="#101820" stroke="#e7edf7"/>')
+    parts.append(f'<circle cx="{ox+13*scale}" cy="{46+2.7*scale}" r="9" fill="#101820" stroke="#e7edf7"/>')
 
 for index, x, y, px, py in leds:
     cx, cy = 50 + px * scale, 46 + py * scale
     rect(cx - 12, cy - 12, 24, 24, "#172632", "#516e74", 4)
     parts.append(f'<circle cx="{cx}" cy="{cy}" r="5" fill="#75dcf4"/>')
 
-ox = 378
-rect(ox + 3*scale, 46 + 7*scale, 18*scale, 24*scale, "#26353a", "#e0ae7e", 8)
+ox = 390
+rect(ox + 3*scale, 46 + 7*scale, 20*scale, 25*scale, "#26353a", "#e0ae7e", 8)
 parts.append(f'<text class="small" x="{ox+8*scale}" y="{46+19*scale}">CELL</text>')
-for label, x, w in [("MCU", 2.5, 4), ("CHG", 7.2, 4), ("REG", 12, 4), ("ACC", 17, 4)]:
-    rect(ox + x*scale, 46 + 31*scale, w*scale, 3.2*scale, "#314a52", "#d3e0de", 4)
-    parts.append(f'<text class="small" x="{ox+(x+0.2)*scale}" y="{46+33*scale}">{label}</text>')
-for label, x in [("5V", 5), ("GND", 12), ("UPDI", 19)]:
-    parts.append(f'<circle cx="{ox+x*scale}" cy="{46+36*scale}" r="7" fill="#d2aa5d"/>')
-    parts.append(f'<text class="small" x="{ox+(x-1.5)*scale}" y="{46+37.6*scale}">{label}</text>')
-parts.append('<text class="small" x="50" y="530">24 × 38 mm board · outline and placements provisional · NO COPPER / NO GERBERS</text></svg>')
+for label, x, w in [("MCU", 2, 4), ("CHG", 7.5, 4), ("REG", 13, 4), ("ACC", 19, 4)]:
+    rect(ox + x*scale, 46 + 34*scale, w*scale, 3.2*scale, "#314a52", "#d3e0de", 4)
+    parts.append(f'<text class="small" x="{ox+(x+0.2)*scale}" y="{46+36*scale}">{label}</text>')
+for label, x in [("5V", 4), ("GND", 10), ("UPDI", 16), ("VTG", 22)]:
+    parts.append(f'<circle cx="{ox+x*scale}" cy="{46+39.5*scale}" r="7" fill="#d2aa5d"/>')
+    parts.append(f'<text class="small" x="{ox+(x-1.5)*scale}" y="{46+41*scale}">{label}</text>')
+parts.append('<text class="small" x="50" y="575">26 × 42 mm board · outline and placements provisional · NO COPPER / NO GERBERS</text></svg>')
 (HERE / "board_study.svg").write_text("\n".join(parts), encoding="utf-8")
 print(f"Wrote {len(leds)} LED positions and board study to {HERE}")

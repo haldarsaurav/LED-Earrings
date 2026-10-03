@@ -20,7 +20,9 @@ uint8_t pixelBuffer[LED_COUNT * 3];
 tinyNeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB, pixelBuffer);
 uint8_t mode = 0;
 uint8_t budgetStep = 0;
-const uint8_t channelSumBudget[3] = {16, 24, 32};
+// Start conservatively with the selected protected 150 mAh cell. These
+// brightness estimates still require measured peak and average currents.
+const uint8_t channelSumBudget[3] = {10, 16, 24};
 bool sensorPresent = false;
 bool batteryLatchedOff = false;
 int16_t slopeQ8 = 0;
