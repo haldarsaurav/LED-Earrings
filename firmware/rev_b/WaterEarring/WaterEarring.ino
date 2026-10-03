@@ -1,5 +1,5 @@
 // Rev B concept firmware: ATtiny1616 + LIS2DW12 + 8x10 WS2812-compatible LEDs.
-// Compile/flash/physical current are NOT yet verified. See ../README.md.
+// Compiles with megaTinyCore 2.6.11. Flashing and physical current are unverified.
 #include <Arduino.h>
 #include <Wire.h>
 #include <tinyNeoPixel_Static.h>
@@ -24,6 +24,7 @@ uint8_t budgetStep = 0;
 // brightness estimates still require measured peak and average currents.
 const uint8_t channelSumBudget[3] = {10, 16, 24};
 bool sensorPresent = false;
+bool diagnosticMode = false;
 bool batteryLatchedOff = false;
 int16_t slopeQ8 = 0;
 int16_t slopeSpeed = 0;
@@ -151,13 +152,35 @@ void drawRainbow() {
     }
 }
 
+// Hold the effect button while switching on to inspect the first pixels,
+// sensor response and battery state through the assembled front display.
+void drawDiagnostic() {
+  strip.clear();
+  strip.setPixelColor(pixelIndex(0, 0), 8, 0, 0); // red
+  strip.setPixelColor(pixelIndex(1, 0), 0, 8, 0); // green
+  strip.setPixelColor(pixelIndex(2, 0), 0, 0, 8); // blue
+  for (uint8_t y = 2; y < 6; ++y) {
+    if (sensorPresent) strip.setPixelColor(pixelIndex(4, y), 0, 6, 0);
+    else strip.setPixelColor(pixelIndex(4, y), 8, 0, 0);
+  }
+  const uint16_t mv = batteryMillivolts();
+  for (uint8_t y = 2; y < 6; ++y) {
+    if (mv >= 3700) strip.setPixelColor(pixelIndex(6, y), 0, 6, 0);
+    else if (mv >= LOW_BATTERY_MV) strip.setPixelColor(pixelIndex(6, y), 6, 3, 0);
+    else strip.setPixelColor(pixelIndex(6, y), 8, 0, 0);
+  }
+}
+
 void readButton(uint32_t now) {
   const bool raw = digitalRead(BUTTON_PIN);
   if (raw != buttonRaw) { buttonRaw = raw; buttonChanged = now; }
   if (now - buttonChanged > 25 && raw != buttonStable) {
     buttonStable = raw;
     if (raw == LOW) { buttonDown = now; longHandled = false; }
-    else if (!longHandled) mode = (mode + 1) % 4;
+    else if (!longHandled) {
+      if (diagnosticMode) diagnosticMode = false;
+      else mode = (mode + 1) % 4;
+    }
   }
   if (buttonStable == LOW && !longHandled && now - buttonDown > 700) {
     budgetStep = (budgetStep + 1) % 3;
@@ -176,6 +199,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
+  diagnosticMode = digitalRead(BUTTON_PIN) == LOW;
   analogReadResolution(10);
   Wire.begin();
   startSensor();
@@ -202,7 +226,8 @@ void loop() {
     } else lowSince = 0;
   }
 
-  switch (mode) {
+  if (diagnosticMode) drawDiagnostic();
+  else switch (mode) {
     case 0: drawWater(); break;
     case 1: drawHeart(); break;
     case 2: drawSparkle(); break;

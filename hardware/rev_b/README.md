@@ -1,6 +1,6 @@
 # Rev B — motion water earring, design-start package
 
-**Status: architectural schematic and placement study, with a saved [EasyEDA Rev B project](https://easyeda.com/haldarsaurav123456/led-earrings-rev-b-motion-water) containing five sourced symbols and a provisional 26 × 42 mm PCB outline with five footprints. Not a complete schematic, routed PCB, manufacturing file, or order authorization.** The older `documents/LED_Earrings_RevA_Design_Package` is an independent ESP32-C3 / 10 × 10 concept; do not mix its netlist or charger into this revision.
+**Status: architectural schematic and placement study, with a saved [EasyEDA Rev B project](https://easyeda.com/haldarsaurav123456/led-earrings-rev-b-motion-water) containing four sourced IC symbols and two LED symbols, and a provisional 26 × 42 mm PCB outline with five footprints. Not a complete schematic, routed PCB, manufacturing file, or order authorization.** The older `documents/LED_Earrings_RevA_Design_Package` is an independent ESP32-C3 / 10 × 10 concept; do not mix its netlist or charger into this revision.
 
 ## Decision for the first wearable prototype
 
@@ -73,7 +73,7 @@ Run `python generate_study.py` to regenerate:
 - `led_chain.csv`: explicit 80-pixel serpentine order and net labels.
 - `board_study.svg`: front/back concept map. The rear rectangles are **space reservations**, not real footprints.
 
-**EasyEDA status:** the named project is saved in the user's account. The ATtiny1616-MNR, ST LIS2DW12TR, TI BQ25185DLHR, TI TPS63030DSKR and Worldsemi WS2812B-2020-V6 symbols are on the schematic. A converted 26 × 42 mm two-layer PCB document contains their five footprints, still outside the board outline. The schematic has no completed nets and the PCB has no placement or routing. The LED library footprint is named `WS2815C-2020-4P`; confirm exact pad size and pin orientation from the Worldsemi part before creating the other 79. Never order from `board_study.svg` or the partial EasyEDA project.
+**EasyEDA status:** the named project is saved in the user's account. The ATtiny1616-MNR, ST LIS2DW12TR, TI BQ25185DLHR, TI TPS63030DSKR and two Worldsemi WS2812B-2020-V6 symbols are on the schematic. A converted 26 × 42 mm two-layer PCB document contains five footprints, still outside the board outline. The schematic has no completed nets and the PCB has no placement or routing. The pin-by-pin [capture contract](PIN_CONNECTIONS.md) and [draft BOM](bom_draft.csv) are local files. The LED library footprint is named `WS2815C-2020-4P`; confirm exact pad size and pin orientation from the Worldsemi part before creating the other 78. Never order from `board_study.svg` or the partial EasyEDA project.
 
 ## Release gates before any PCB order
 

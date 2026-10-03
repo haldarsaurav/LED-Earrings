@@ -38,7 +38,8 @@ module tray() {
         translate([9,-wall-0.1,1.5]) cube([6,wall+clearance+0.2,2]);
     }
     // Four flexible retention nibs; tune after the first print.
-    for (x=[-0.15,board_w-0.55], y=[8,31])
+    // Nibs overlap the wall so the STL remains one connected solid.
+    for (x=[-0.55,board_w-0.15], y=[8,31])
         translate([x,y,base+cavity_depth]) cube([0.7,1.5,0.35]);
 }
 

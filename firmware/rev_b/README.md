@@ -1,6 +1,6 @@
 # Rev B firmware — motion water earring
 
-**Status:** source draft for the proposed ATtiny1616 board. It has not been compiled with megaTinyCore or flashed to hardware.
+**Status:** compiled with Arduino CLI 1.5.2-rc.1 and megaTinyCore 2.6.11 for ATtiny1616 at 16 MHz. Build used 4537 / 16384 bytes flash and 357 / 2048 bytes static RAM. No hardware flash, current or sensor test has been performed.
 
 ## Hardware contract
 
@@ -18,12 +18,18 @@ LIS2DW12 SA0 is tied to GND (I²C address 0x18); CS is tied to 3V45. The display
 
 ## Build and upload
 
-1. Install the current [megaTinyCore](https://github.com/SpenceKonde/megaTinyCore) in Arduino IDE. Its included `tinyNeoPixel_Static` library supports the modern tinyAVR parts.
-2. Open `WaterEarring/WaterEarring.ino`. Choose ATtiny1616, a supported 16 or 20 MHz clock and your actual UPDI programmer. Keep PA0 configured as UPDI.
+1. Install [Arduino CLI](https://docs.arduino.cc/arduino-cli/installation) and [megaTinyCore](https://github.com/SpenceKonde/megaTinyCore). The verified build used megaTinyCore **2.6.11** and the included `tinyNeoPixel_Static` library.
+2. Run `./firmware/rev_b/build.ps1` in PowerShell, or open `WaterEarring/WaterEarring.ino` in Arduino IDE. Choose ATtiny1616 at **16 MHz**, 2.6 V brown-out detector enabled and PA0 kept as UPDI. The build script records all board options and creates `WaterEarring_ATtiny1616_16MHz.hex`.
 3. Compile before connecting a cell. Program through the P4 3V45, P2 GND and P3 UPDI pads with a programmer that senses target voltage. Battery installed and earring switch on. Do not feed 5 V onto 3V45. See [`PROGRAM_AND_TEST.md`](../../PROGRAM_AND_TEST.md) for the full home procedure.
 4. Test one LED, then a short chain, then the full matrix from a current-limited supply. Verify color order, first pixel and sensor orientation. The firmware displays an automatic wave when the accelerometer is absent, allowing a visual bench test.
 
 Short button press cycles water, heart, sparkle and rainbow. Long press cycles three restrained brightness budgets, now 10/16/24 channel-sum units for the 150 mAh cell. A hardware switch on the regulator enable pin is the true off control. A sustained low-battery reading blanks the LEDs until reset. The LED budget is a **software estimate**, not a certified current limit; measure real peak and average current and revise it before wearing.
+
+For an assembled-unit check, **hold the effect button while switching on**. The first row shows one red, green and blue pixel. Column 5 is green if the LIS2DW12 responded and configured, red otherwise. Column 7 is green above 3.7 V, amber from 3.4–3.7 V and red below 3.4 V as estimated by the uncalibrated battery divider. Release the button and press it briefly to leave diagnostics. A green sensor indicator does not prove correct axis rotation; perform the tilt test separately.
+
+`python firmware/rev_b/simulate.py` creates `water_preview.png` and `water_preview.gif`. They use the sketch's 8 × 10 surface and spring equations with a simulated tilt sweep. The animation is a visual preview, not a hardware measurement.
+
+The checked `.hex` SHA-256 is `D03D51C9D4E94C5472F37E341999F4EA483CE88D4EE204009888D4E983B4F759`. Rebuild after any source, core or board-option change. The BOD menu choice is encoded in the build settings and may need a fuse-writing step on a blank part; confirm it when flashing with your actual UPDI programmer.
 
 ## Source basis
 

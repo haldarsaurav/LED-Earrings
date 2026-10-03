@@ -1,0 +1,28 @@
+Reference,Quantity_per_earring,Value_or_MPN,Function,Footprint_status,LCSC_or_source
+U1,1,ATTINY1616-MNR,Controller,EasyEDA sourced QFN-20,C507118
+U2,1,LIS2DW12TR,3-axis accelerometer,EasyEDA sourced LGA-12,C189624
+U3,1,BQ25185DLHR,1S charger with power path,EasyEDA sourced WSON-10,C19725033
+U4,1,TPS63030DSKR,3.45V buck-boost,EasyEDA sourced SON-10,C12462
+LED01-LED80,80,WS2812B-2020-V6,RGB display,Library footprint pinout UNVERIFIED,C52917434
+B1,1,Akyga AKY0153 150mAh protected,1S battery,mechanical and connector fit unverified,Akyga
+TH1,1,Vishay NTCAFLEX05103GL,10k B3435 cell temperature sensor,lead routing unverified,Vishay
+L1,1,1.5uH rated for switch current,regulator inductor,exact MPN and footprint TBD,TBD
+R1,1,330R 1%,LED data resistor,0402 or 0603 TBD,TBD
+R2-R3,2,10k 1%,I2C pullups,0402 or 0603 TBD,TBD
+R4,1,1M 1%,battery sense high,0402 or 0603 TBD,TBD
+R5,1,330k 1%,battery sense low,0402 or 0603 TBD,TBD
+R6,1,10k 1%,charger ISET nominal 30mA,0402 or 0603 TBD,TBD
+R7,1,24k 1%,charger ILIM/VSET,0402 or 0603 TBD,TBD
+R8,1,1.18M 1%,regulator feedback high,0402 or 0603 TBD,TBD
+R9,1,200k 1%,regulator feedback low,0402 or 0603 TBD,TBD
+C1,1,1uF 25V X7R,charger input,exact MPN and DC-bias TBD,TBD
+C2,1,10uF 25V X7R,charger SYS,exact MPN and DC-bias TBD,TBD
+C3,1,1uF X7R,charger BAT,exact MPN and DC-bias TBD,TBD
+C4,1,10uF X7R,regulator VIN,exact MPN and DC-bias TBD,TBD
+C5,1,100nF X7R,regulator VINA,exact MPN and footprint TBD,TBD
+C6-C7,2,10uF X7R,regulator VOUT,exact MPN and DC-bias TBD,TBD
+C8-C9,2,100nF X7R,MCU and sensor decoupling,exact MPN and footprint TBD,TBD
+C10,1,10uF X7R,LED rail bulk,exact MPN and DC-bias TBD,TBD
+BTN1,1,normally open momentary,effect button,exact side-actuated part TBD,TBD
+SW1,1,SPDT on-off slide,regulator enable,exact side-actuated part TBD,TBD
+P1-P4,4,gold test pads,charge and UPDI pads,geometry and keepout TBD,PCB copper
